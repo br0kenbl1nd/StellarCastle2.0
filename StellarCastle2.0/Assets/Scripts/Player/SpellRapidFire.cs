@@ -51,41 +51,16 @@ public class SpellRapidFire : MonoBehaviour
         //loop through them
         foreach(GameObject unit in units)
         {
-            //get their unitstats component
-            UnitStats unitStats = unit.GetComponent<UnitStats>();
-            
-            if(unitStats != null)
+            //get their buffs script
+            UnitBuffs unitBuffs = unit.GetComponent<UnitBuffs>();
+
+            if(unitBuffs != null)
             {
-                //set the attack speed to rapid amount
-                unitStats.AttackSpeed += rapidIncreaseAmount;
-                //set the movement speed to rapid amount
-                unitStats.Speed += rapidIncreaseAmount;
+                unitBuffs.AttackSpeedBuff(rapidIncreaseAmount, duration);
             }
+
         }
-        //invoke the exhaust function after duration seconds
-        Invoke("ExhaustRapidFire", duration);
 
     } //rapid fire
-
-    void ExhaustRapidFire()
-    {
-        //Find all the allied units and buildings
-        GameObject[] units = GameObject.FindGameObjectsWithTag(allyTag);
-        //loop through them
-        foreach (GameObject unit in units)
-        {
-            //get their unitstats component
-            UnitStats unitStats = unit.GetComponent<UnitStats>();
-
-            if (unitStats != null)
-            {
-                //set the attack speed to original amount
-                unitStats.AttackSpeed = unitStats.StartAttackSpeed;
-                //set the movement speed to original amount
-                unitStats.Speed -= unitStats.StartSpeed;
-            }
-        }
-
-    } //exhaust rapid fire
 
 } //class

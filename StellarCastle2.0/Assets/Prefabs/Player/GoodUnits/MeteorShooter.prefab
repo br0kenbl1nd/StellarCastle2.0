@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2774360412923898978}
   - component: {fileID: -6162950085061714759}
   - component: {fileID: 8022590154715639252}
+  - component: {fileID: 5940179989940356205}
   m_Layer: 0
   m_Name: MeteorShooter
   m_TagString: Good
@@ -195,7 +196,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitStats: {fileID: 3501411595115147285}
-  TargetTag: Bad
 --- !u!114 &3501411595115147272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +374,19 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 3876457866183642979}
   unitStats: {fileID: 3501411595115147285}
   displayDuration: 5
+--- !u!114 &5940179989940356205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501411595115147275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15d66d835c3ac84e9a163bb5b996cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 2834478212761544495}
 --- !u!1 &3876457866183642979
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +839,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5960d7bd7361d4f96e60d78dd716d6, type: 3}
+--- !u!23 &2834478212761544495 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ec5960d7bd7361d4f96e60d78dd716d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3501411595087444907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3971394450535717952 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec5960d7bd7361d4f96e60d78dd716d6,

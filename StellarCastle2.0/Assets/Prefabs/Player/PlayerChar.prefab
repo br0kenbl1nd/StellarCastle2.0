@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphics: {fileID: 2252730788375309117}
   playerStats: {fileID: 1377321317}
-  habitatRqd: Meteor
+  habitatRqd: MeteorGood
   controller: {fileID: 1786231174530971589}
   speed: 4
   rotationSpeed: 720
@@ -195,7 +195,8 @@ MonoBehaviour:
   allyTag: Good
   cooldown: 30
   duration: 5
-  rapidIncreaseAmount: 2
+  rapidIncreaseAmount: 100
+  buffColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &1138410344
 MonoBehaviour:
   m_ObjectHideFlags: 0

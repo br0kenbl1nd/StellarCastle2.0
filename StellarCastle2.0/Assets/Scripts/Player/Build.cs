@@ -4,103 +4,139 @@ public class Build : MonoBehaviour
 {
     public PlayerStats playerStats;
 
+    [Header("Required habitat for the player")]
     [SerializeField]
-    private Buildings goldMine;
-
-    [SerializeField]
-    private Buildings meteorShooter;
-
-    [SerializeField]
-    private Buildings lavaSpitter;
-
-    [SerializeField]
-    private Buildings volcano;
-
-    [SerializeField]
-    private Buildings meteorSoldierCamp;
+    private string RQDHabitat;
 
     public GameObject toolTip;
 
+    //Variables for the different buildings that this particular character can build
+    #region Building Variables
+    [SerializeField]
+    private Buildings building1;
+
+    [SerializeField]
+    private Buildings building2;
+
+    [SerializeField]
+    private Buildings building3;
+
+    [SerializeField]
+    private Buildings building4;
+
+    [SerializeField]
+    private Buildings building5;
+
+    [SerializeField]
+    private Buildings armyCamp;
+    #endregion
+
+    //Update is used here to build based on key stroke. Number keys are used to 
+    //build different buildings.
+    #region Update
     private void Update()
     {
-        //input key 1 is for resource building
+        //input key 1 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            BuildGoldMine();
+            BuildBuilding1();
         }
 
-        //input key 2 is for defense building
+        //input key 2 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            BuildMeteorShooter();
+            BuildBuilding2();
         }
 
-        //input key 3 is for lava spitter
+        //input key 3 
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {
-            BuildLavaSpitter();
+            BuildBuilding3();
         }
 
-        //input key 4 is for volcano
+        //input key 4 
         if(Input.GetKeyDown(KeyCode.Alpha4))
         {
-            BuildVolcano();
+            BuildBuilding4();
         }
 
-        //input key 5 is for soldier camp
+        //input key 5 
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
-            BuildMeteorSoldierCamp();
+            BuildBuilding5();
+        }
+
+        //input key 6
+        if(Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            BuildArmyCamp();
         }
 
     } //update
+    #endregion
 
-    public void BuildGoldMine()
+    //Contains all the functions to build the five type of buildings and one army camp
+    #region Build Different Buildings
+
+    public void BuildBuilding1()
     {
-        if (goldMine.buildingPrefab != null)
+        if (building1 != null)
         {
-            BuildBuilding(goldMine.buildingPrefab, goldMine.cost);
+            BuildBuilding(building1, building1.cost);
         }
     }
 
-    public void BuildMeteorShooter()
+    public void BuildBuilding2()
     {
-        if (meteorShooter.buildingPrefab != null)
+        if (building2 != null)
         {
-            BuildBuilding(meteorShooter.buildingPrefab, meteorShooter.cost);
+            BuildBuilding(building2, building2.cost);
         }
     }
 
-    public void BuildMeteorSoldierCamp()
+    public void BuildBuilding3()
     {
-        if (meteorSoldierCamp.buildingPrefab != null)
+        if (building3 != null)
         {
-            BuildBuilding(meteorSoldierCamp.buildingPrefab, meteorSoldierCamp.cost);
+            BuildBuilding(building3, building3.cost);
         }
     }
 
-    public void BuildLavaSpitter()
+    public void BuildBuilding4()
     {
-        if (lavaSpitter.buildingPrefab != null)
+        if (building4 != null)
         {
-            BuildBuilding(lavaSpitter.buildingPrefab, lavaSpitter.cost);
+            BuildBuilding(building4, building4.cost);
         }
     }
 
-    public void BuildVolcano()
+    public void BuildBuilding5()
     {
-        if (volcano.buildingPrefab != null)
+        if (building5 != null)
         {
-            BuildBuilding(volcano.buildingPrefab, volcano.cost);
+            BuildBuilding(building5, building5.cost);
         }
     }
 
-    public void BuildBuilding(GameObject _building, float _cost)
+    public void BuildArmyCamp()
+    {
+        if(armyCamp != null)
+        {
+            BuildBuilding(armyCamp, armyCamp.cost);
+        }
+    }
+
+    #endregion
+
+    //This function checks for habitat, availability of the node, 
+    //money and biulds the build, deducts the cost from the player stats
+    #region Build
+    public void BuildBuilding(Buildings _building, float _cost)
     {
         //check if the node has the correct habitat
         if (playerStats.CurrentNode.habitat.CurrentHabitat != null)
         {
-            if (playerStats.CurrentNode.habitat.CurrentHabitat.name == meteorShooter.requiredHabitatName)
+            if (playerStats.CurrentNode.habitat.CurrentHabitat.name == _building.requiredHabitatName)
             {
                 //check if there is a building on the node already
                 if (playerStats.CurrentNode.CurrentBuilding == null)
@@ -109,7 +145,7 @@ public class Build : MonoBehaviour
                     if (_cost <= playerStats.Money)
                     {
                         //if we have money build
-                        playerStats.CurrentNode.BuildBuildingOnNode(_building);
+                        playerStats.CurrentNode.BuildBuildingOnNode(_building.buildingPrefab);
                         playerStats.Money -= _cost;
                     }
                     else
@@ -155,6 +191,7 @@ public class Build : MonoBehaviour
 
 
     } //build meteor shooter
+    #endregion
 
     void ExpireText()
     {

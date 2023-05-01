@@ -63,7 +63,13 @@ public class SpreadHabitat : MonoBehaviour
             if (distanceToNode <= habitatSpreadRange)
             {
                 Habitat _habitat = node.GetComponent<Habitat>();
-                _habitat.RefreshHabitat();
+                if (_habitat != null)
+                {
+                    if (_habitat.CurrentHabitat == habitat)
+                    {
+                        _habitat.RefreshHabitat();
+                    }
+                }
             }
         }
     } //de spread

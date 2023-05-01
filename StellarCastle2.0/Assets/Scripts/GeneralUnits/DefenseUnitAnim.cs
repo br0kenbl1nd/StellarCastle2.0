@@ -26,7 +26,7 @@ public class DefenseUnitAnim : MonoBehaviour
             Quaternion lookRotation = Quaternion.LookRotation(dir);
 
             Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, rotationSpeed * Time.deltaTime).eulerAngles;
-            partToRotate.rotation = Quaternion.Euler(0f, rotation.y + 90f, 0f);
+            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         }
 

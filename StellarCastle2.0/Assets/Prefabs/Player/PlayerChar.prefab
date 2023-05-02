@@ -141,32 +141,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1377321317}
-  goldMine:
+  RQDHabitat: MeteorGood
+  toolTip: {fileID: 0}
+  building1:
     buildingPrefab: {fileID: 2066626798212649138, guid: 8ac702187cf91d04ea07a635d911b520,
       type: 3}
     cost: 100
     requiredHabitatName: MeteorGood
-  meteorShooter:
+    name: GoldMine
+    displayImage: {fileID: 0}
+  building2:
     buildingPrefab: {fileID: 5718025100205178151, guid: 083dfa4cb02044640a49ffd33eca72c3,
       type: 3}
     cost: 200
     requiredHabitatName: MeteorGood
-  lavaSpitter:
+    name: MeteorShooter
+    displayImage: {fileID: 0}
+  building3:
     buildingPrefab: {fileID: 1337673821755276869, guid: 7c1215f75be2b0849b2a9aacda0725f6,
       type: 3}
     cost: 300
     requiredHabitatName: MeteorGood
-  volcano:
+    name: LavaSpitter
+    displayImage: {fileID: 0}
+  building4:
     buildingPrefab: {fileID: 1231204453662622964, guid: 9a0a789a3ba587b4084a2abef7aa03a6,
+      type: 3}
+    cost: 400
+    requiredHabitatName: MeteorGood
+    name: Volcano
+    displayImage: {fileID: 0}
+  building5:
+    buildingPrefab: {fileID: 0}
+    cost: 0
+    requiredHabitatName: 
+    name: 
+    displayImage: {fileID: 0}
+  armyCamp:
+    buildingPrefab: {fileID: 3563312581738208575, guid: 7b7642eed374c264e9e8bdab268163ff,
       type: 3}
     cost: 500
     requiredHabitatName: MeteorGood
-  meteorSoldierCamp:
-    buildingPrefab: {fileID: 3563312581738208575, guid: 7b7642eed374c264e9e8bdab268163ff,
-      type: 3}
-    cost: 350
-    requiredHabitatName: MeteorGood
-  toolTip: {fileID: 0}
+    name: ArmyCamp
+    displayImage: {fileID: 0}
 --- !u!114 &1377321317
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -67,7 +67,7 @@ public class Build : MonoBehaviour
         }
 
         //input key 6
-        if(Input.GetKeyDown(KeyCode.Alpha6))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             BuildArmyCamp();
         }
@@ -133,39 +133,50 @@ public class Build : MonoBehaviour
     #region Build
     public void BuildBuilding(Buildings _building, float _cost)
     {
-        //check if the node has the correct habitat
-        if (playerStats.CurrentNode.habitat.CurrentHabitat != null)
+        if (_building != null)
         {
-            if (playerStats.CurrentNode.habitat.CurrentHabitat.name == _building.requiredHabitatName)
+            //check if the node has the correct habitat
+            if (playerStats.CurrentNode.habitat.CurrentHabitat != null)
             {
-                //check if there is a building on the node already
-                if (playerStats.CurrentNode.CurrentBuilding == null)
+                if (playerStats.CurrentNode.habitat.CurrentHabitat.name == _building.requiredHabitatName)
                 {
-                    //if node is free, check for money
-                    if (_cost <= playerStats.Money)
+                    //check if there is a building on the node already
+                    if (playerStats.CurrentNode.CurrentBuilding == null)
                     {
-                        //if we have money build
-                        playerStats.CurrentNode.BuildBuildingOnNode(_building.buildingPrefab);
-                        playerStats.Money -= _cost;
+                        //if node is free, check for money
+                        if (_cost <= playerStats.Money)
+                        {
+                            //if we have money build
+                            playerStats.CurrentNode.BuildBuildingOnNode(_building.buildingPrefab);
+                            playerStats.Money -= _cost;
+                        }
+                        else
+                        {
+                            if (toolTip != null)
+                            {
+                                //if we dont have money, print no money
+                                toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "Not enough gold";
+                                Invoke("ExpireText", 0.5f);
+                            }
+                        }
+
+
                     }
                     else
                     {
                         if (toolTip != null)
                         {
-                            //if we dont have money, print no money
-                            toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "Not enough gold";
+                            //if node is full, print node is full
+                            toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "Cant build here!";
                             Invoke("ExpireText", 0.5f);
                         }
                     }
-
-
                 }
                 else
                 {
                     if (toolTip != null)
                     {
-                        //if node is full, print node is full
-                        toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "Cant build here!";
+                        toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "Wrong habitat!";
                         Invoke("ExpireText", 0.5f);
                     }
                 }
@@ -178,17 +189,16 @@ public class Build : MonoBehaviour
                     Invoke("ExpireText", 0.5f);
                 }
             }
+
         }
         else
         {
-            if (toolTip != null)
+            if(toolTip != null)
             {
-                toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "Wrong habitat!";
+                toolTip.GetComponent<TMPro.TextMeshProUGUI>().text = "No building selected";
                 Invoke("ExpireText", 0.5f);
             }
         }
-
-
 
     } //build meteor shooter
     #endregion

@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
 
     public string habitatRqd = "MeteorGood";
 
-    public CharacterController controller;
-
     public float speed = 12f;
 
     public float rotationSpeed = 720f;
@@ -26,31 +24,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //get input on x axis
-        float x = Input.GetAxis("Horizontal");
-        //get input on z axis
+        //front and back movement
         float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal");
 
-        //set the movement to the vector
-        move = transform.right * x + transform.forward * z;
+        //vectorize the input
+        Move = transform.forward * z + transform.right * x;
 
-        //impliment movement
-        controller.Move(move * speed * Time.deltaTime);
+        //apply movement
+        transform.Translate(Move * speed * Time.deltaTime, Space.World);
 
-        if(move != Vector3.zero)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(-move, Vector3.up);
-            graphics.transform.rotation = Quaternion.RotateTowards(graphics.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }
-
-        //keep player on the ground
-        transform.position = new Vector3(transform.position.x, 0.2f, transform.position.z);
-        
         //detect the movement off habitat
         DisableAbilitiesOffHabitat();
         
     } //update
 
+    //disabling abilities when the character moves off creep
+    #region Disable abilities when off creep
     private void DisableAbilitiesOffHabitat()
     {
         //for the characters in the level phase some of these components maybe null
@@ -95,5 +85,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     } //disable abilities off habitat
+    #endregion
 
 } //class

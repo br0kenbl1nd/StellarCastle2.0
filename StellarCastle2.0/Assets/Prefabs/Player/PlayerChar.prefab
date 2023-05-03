@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1786231174530971586}
-  - component: {fileID: 1786231174530971589}
   - component: {fileID: 1786231174530971588}
   - component: {fileID: 1689831495250806254}
   - component: {fileID: 1033719182}
@@ -42,24 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &1786231174530971589
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786231174530971587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 0.84
-  m_Radius: 0.11
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!114 &1786231174530971588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,9 +56,8 @@ MonoBehaviour:
   graphics: {fileID: 2252730788375309117}
   playerStats: {fileID: 1377321317}
   habitatRqd: MeteorGood
-  controller: {fileID: 1786231174530971589}
   speed: 4
-  rotationSpeed: 720
+  rotationSpeed: 180
   rapidFire: {fileID: 1138410335}
   summonAttackUnit: {fileID: 1138410344}
 --- !u!114 &1689831495250806254
@@ -87,7 +67,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786231174530971587}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0a9935f8fd56c041bef11fe66ade18d, type: 3}
   m_Name: 
@@ -158,7 +138,7 @@ MonoBehaviour:
     name: MeteorShooter
     displayImage: {fileID: 0}
   building3:
-    buildingPrefab: {fileID: 1337673821755276869, guid: 7c1215f75be2b0849b2a9aacda0725f6,
+    buildingPrefab: {fileID: 1345290702920908592, guid: 6797e4f4baed2024f94235fb74a799ad,
       type: 3}
     cost: 300
     requiredHabitatName: MeteorGood
@@ -357,7 +337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786231175166865294}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dfc779e734363a479d39e7e65dd6484, type: 3}
   m_Name: 

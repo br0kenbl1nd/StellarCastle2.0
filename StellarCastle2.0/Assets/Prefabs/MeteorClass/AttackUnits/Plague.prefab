@@ -120,7 +120,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5028202984736308365
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,7 +137,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &702136340941988890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d06d84a30eff974584541b11a8f0aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMovement: {fileID: 2195882369749506158}
+  enemyAnimator: {fileID: 5028202984736308365}
+  meleeAttack: {fileID: 4509519080232557858}
+  rangedAttack: {fileID: 0}
 --- !u!114 &2195882369749506158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4dee9e407049745ad05c20094145b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Good
   rotationSpeed: 720
 --- !u!114 &1725780082502637512
 MonoBehaviour:
@@ -209,7 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitStats: {fileID: 702136340941988890}
-  TargetTag: Bad
 --- !u!114 &4509519080232557858
 MonoBehaviour:
   m_ObjectHideFlags: 0

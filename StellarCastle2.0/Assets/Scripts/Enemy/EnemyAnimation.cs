@@ -2,21 +2,17 @@ using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour
 {
+    [SerializeField]
     EnemyMovement enemyMovement;
 
+    [SerializeField]
     Animator enemyAnimator;
 
+    [SerializeField]
     MeleeAttack meleeAttack;
-    RangedAttack rangedAttack;
 
-    private void Start()
-    {
-        enemyMovement = GetComponent<EnemyMovement>();
-        enemyAnimator = GetComponent<Animator>();
-        meleeAttack = GetComponent<MeleeAttack>();
-        rangedAttack = GetComponent<RangedAttack>();
-        
-    } //start
+    [SerializeField]
+    RangedAttack rangedAttack;
 
     private void Update()
     {

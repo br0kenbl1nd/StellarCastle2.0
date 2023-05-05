@@ -57,7 +57,7 @@ MonoBehaviour:
   playerStats: {fileID: 1377321317}
   habitatRqd: MeteorGood
   speed: 4
-  rotationSpeed: 180
+  rotationSpeed: 90
   rapidFire: {fileID: 1138410335}
   summonAttackUnit: {fileID: 1138410344}
 --- !u!114 &1689831495250806254
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786231174530971587}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0a9935f8fd56c041bef11fe66ade18d, type: 3}
   m_Name: 
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1377321317}
-  dragon: {fileID: 1016717725931624757, guid: 27db6f94d4a339c4a9d73f37b38a904a, type: 3}
+  dragon: {fileID: 8860873232653751470, guid: 1e74b3d1b3ba35d47a2469d846c7aa9e, type: 3}
   dragonCost: 400
   plague: {fileID: 5028202984736308370, guid: 35544a3aeafaf3641b7be945e35c8980, type: 3}
   plagueCost: 800
@@ -238,14 +238,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786231175166865294}
-  m_LocalRotation: {x: 0.25814462, y: 0, z: 0, w: 0.9661063}
-  m_LocalPosition: {x: 0, y: 1.94, z: -1.49}
+  m_LocalRotation: {x: 0.22750118, y: 0, z: 0, w: 0.9737779}
+  m_LocalPosition: {x: 0, y: 3.02, z: -3.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1786231174530971586}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 29.92, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.3, y: 0, z: 0}
 --- !u!20 &1786231175166865280
 Camera:
   m_ObjectHideFlags: 0
@@ -337,12 +337,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786231175166865294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dfc779e734363a479d39e7e65dd6484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 500
   playerBody: {fileID: 1786231174530971586}
 --- !u!1001 &1786231174470782166
 PrefabInstance:

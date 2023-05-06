@@ -56,7 +56,9 @@ public class SpellRapidFire : MonoBehaviour
 
             if(unitBuffs != null)
             {
+                Debug.Log("hi");
                 unitBuffs.AttackSpeedBuff(rapidIncreaseAmount, duration);
+                unitBuffs.MovementSpeedBuff(rapidIncreaseAmount, duration);
             }
 
         }

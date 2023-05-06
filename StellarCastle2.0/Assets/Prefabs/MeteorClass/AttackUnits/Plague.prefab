@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4509519080232557858}
   - component: {fileID: 2800537183984735575}
   - component: {fileID: 8983710694067156761}
+  - component: {fileID: 5204491180133556002}
   m_Layer: 0
   m_Name: Plague
   m_TagString: Good
@@ -260,6 +261,18 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 6922386950695114607}
   unitStats: {fileID: 702136340941988890}
   displayDuration: 5
+--- !u!114 &5204491180133556002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028202984736308370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15d66d835c3ac84e9a163bb5b996cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5744139351791048082
 GameObject:
   m_ObjectHideFlags: 0

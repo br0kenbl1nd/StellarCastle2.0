@@ -152,10 +152,11 @@ MonoBehaviour:
     name: Volcano
     displayImage: {fileID: 0}
   building5:
-    buildingPrefab: {fileID: 0}
-    cost: 0
-    requiredHabitatName: 
-    name: 
+    buildingPrefab: {fileID: 3563312581738208575, guid: 7b7642eed374c264e9e8bdab268163ff,
+      type: 3}
+    cost: 500
+    requiredHabitatName: MeteorGood
+    name: Army Camp
     displayImage: {fileID: 0}
   armyCamp:
     buildingPrefab: {fileID: 3563312581738208575, guid: 7b7642eed374c264e9e8bdab268163ff,

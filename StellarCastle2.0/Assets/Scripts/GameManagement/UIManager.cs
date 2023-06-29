@@ -10,8 +10,6 @@ public class UIManager : MonoBehaviour
 
     public PlayerStats playerStats;
 
-    public SpellRapidFire spell;
-
     private float timeSeconds;
     public float timeMinutes;
 
@@ -19,7 +17,6 @@ public class UIManager : MonoBehaviour
     public GameObject currencyText;
     public GameObject timeText;
     public Image healthBar;
-    public Image spellCooldown;
 
     private void Start()
     {
@@ -45,12 +42,6 @@ public class UIManager : MonoBehaviour
         CalculateTime();
 
         timeText.GetComponent<TMPro.TextMeshProUGUI>().text = timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-
-        //spell cooldown UI management
-        if (spellCooldown != null)
-        {
-            spellCooldown.fillAmount = (spell.Cooldown - spell.Count) / spell.Cooldown;
-        }
 
     } //update
 

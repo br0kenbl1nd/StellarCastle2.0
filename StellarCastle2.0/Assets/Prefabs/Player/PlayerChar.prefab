@@ -152,11 +152,10 @@ MonoBehaviour:
     name: Volcano
     displayImage: {fileID: 0}
   building5:
-    buildingPrefab: {fileID: 3563312581738208575, guid: 7b7642eed374c264e9e8bdab268163ff,
-      type: 3}
-    cost: 500
-    requiredHabitatName: MeteorGood
-    name: Army Camp
+    buildingPrefab: {fileID: 0}
+    cost: 0
+    requiredHabitatName: 
+    name: 
     displayImage: {fileID: 0}
   armyCamp:
     buildingPrefab: {fileID: 3563312581738208575, guid: 7b7642eed374c264e9e8bdab268163ff,
@@ -207,10 +206,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1377321317}
-  dragon: {fileID: 8860873232653751470, guid: 1e74b3d1b3ba35d47a2469d846c7aa9e, type: 3}
-  dragonCost: 400
-  plague: {fileID: 5028202984736308370, guid: 35544a3aeafaf3641b7be945e35c8980, type: 3}
-  plagueCost: 800
+  unit1: {fileID: 8860873232653751470, guid: 1e74b3d1b3ba35d47a2469d846c7aa9e, type: 3}
+  unit1Cost: 1000
+  unit2: {fileID: 5028202984736308370, guid: 35544a3aeafaf3641b7be945e35c8980, type: 3}
+  unit2Cost: 750
+  unit3: {fileID: 3006299758993034554, guid: 6dfe2a344af144840929b8afbe0c434f, type: 3}
+  unit3Cost: 450
   allyTag: Good
 --- !u!1 &1786231175166865294
 GameObject:

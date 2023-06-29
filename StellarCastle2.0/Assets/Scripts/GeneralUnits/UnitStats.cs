@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UnitStats : MonoBehaviour
 {
-
+    [Header("Health")]
     [SerializeField]
     private float startHealth;
     public float StartHealth
@@ -16,6 +16,7 @@ public class UnitStats : MonoBehaviour
         set { health = value; }
     }
 
+    [Header("Attack Range")]
     [SerializeField]
     private float startAttackRange;
     public float StartAttackRange
@@ -29,6 +30,7 @@ public class UnitStats : MonoBehaviour
         private set { attackRange = value; }
     }
 
+    [Header("Target seeking range")]
     [SerializeField]
     private float targetSeekingRange;
     public float TargetSeekingRange
@@ -37,6 +39,7 @@ public class UnitStats : MonoBehaviour
         private set { targetSeekingRange = value; }
     }
 
+    [Header("Movement Speed")]
     [SerializeField]
     private float startSpeed;
     public float StartSpeed
@@ -50,6 +53,7 @@ public class UnitStats : MonoBehaviour
         set { speed = value; }
     }
 
+    [Header("Damage")]
     [SerializeField]
     private float startDamage;
     public float StartDamage
@@ -63,6 +67,7 @@ public class UnitStats : MonoBehaviour
         set { damage = value; }
     }
 
+    [Header("Attack speed")]
     [SerializeField]
     private float startAttackSpeed;
     public float StartAttackSpeed
@@ -76,12 +81,27 @@ public class UnitStats : MonoBehaviour
         set { attackSpeed = value; }
     }
 
+    [Header("Bullet")]
     [SerializeField]
     private GameObject bullet;
     public GameObject Bullet
     {
         get { return bullet; }
         set { bullet = value; }
+    }
+
+    [Header("Evasion - enter percent as number")]
+    [SerializeField]
+    private float startEvasion;
+    public float StartEvasion
+    {
+        get { return startEvasion; }
+    }
+    private float evasion;
+    public float Evasion
+    {
+        get { return evasion; }
+        set { evasion = value; }
     }
 
     private void Start()
@@ -91,6 +111,7 @@ public class UnitStats : MonoBehaviour
         attackSpeed = startAttackSpeed;
         attackRange = startAttackRange;
         damage = startDamage;
+        evasion = startEvasion;
         
     } //start
 
@@ -99,7 +120,7 @@ public class UnitStats : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, targetSeekingRange);
         Gizmos.color = Color.red;
 
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, startAttackRange);
         Gizmos.color = Color.green;
     }
 

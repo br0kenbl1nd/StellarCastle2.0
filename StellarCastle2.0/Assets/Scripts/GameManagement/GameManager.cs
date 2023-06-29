@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public GameWon gameWon;
     public UIManager uiManager;
 
-    public GameObject[] enemySpawners;
-
     private void Update()
     {
         if (playerBase == null)
@@ -23,29 +21,10 @@ public class GameManager : MonoBehaviour
             GamePaused();
         }
 
-        if(CheckForEnemySpawners() <= 0)
-        {
-            GameWon();
-        }
-
     } //update
 
-    int CheckForEnemySpawners()
-    {
-        int count = 0;
 
-        foreach(GameObject spawner in enemySpawners)
-        {
-            if (spawner != null)
-            {
-                count += 1;
-            }
-        }
-
-        return count;
-    }
-
-    void GameOver()
+    public void GameOver()
     {
         gameOver.PlayerGameOver();
 

@@ -4,17 +4,23 @@ public class SummonAttackUnit : MonoBehaviour
 {
     public PlayerStats playerStats;
 
-    [Header("Dragon")]
+    [Header("Unit 1")]
     [SerializeField]
-    private GameObject dragon;
+    private GameObject unit1;
     [SerializeField]
-    private float dragonCost;
+    private float unit1Cost;
 
-    [Header("Plague")]
+    [Header("Unit 2")]
     [SerializeField]
-    private GameObject plague;
+    private GameObject unit2;
     [SerializeField]
-    private float plagueCost;
+    private float unit2Cost;
+
+    [Header("Unit 3")]
+    [SerializeField]
+    private GameObject unit3;
+    [SerializeField]
+    private float unit3Cost;
 
     public string allyTag;
 
@@ -23,28 +29,33 @@ public class SummonAttackUnit : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            SelectDragon();
+            SelectUnit1();
         }
 
         if(Input.GetKeyDown(KeyCode.X))
         {
-            SelectPlague();
+            SelectUnit2();
         }
 
-    }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            SelectUnit3();
+        }
 
-    public void SelectDragon()
+    } //update
+
+    public void SelectUnit1()
     {
         //check if there is an army camp in the board
         if (CheckForArmyCamp())
         {
             //if an army camp is available, check resources
-            if (playerStats.Money >= dragonCost)
+            if (playerStats.Money >= unit1Cost)
             {
-                //if resources are available spawn dragon
-                SpawnDragon();
+                //if resources are available spawn 
+                SpawnUnit1();
                 //reduce resources
-                playerStats.Money -= dragonCost;
+                playerStats.Money -= unit1Cost;
             }
             else
             {
@@ -55,20 +66,20 @@ public class SummonAttackUnit : MonoBehaviour
         {
             Debug.Log("No camp");
         }
-    } //select dragon
+    } //select unit 1
 
-    public void SelectPlague()
+    public void SelectUnit2()
     {
         //check if there is an army camp in the board
         if (CheckForArmyCamp())
         {
             //if an army camp is available, check resources
-            if (playerStats.Money >= plagueCost)
+            if (playerStats.Money >= unit2Cost)
             {
-                //if resources are available spawn dragon
-                SpawnPlague();
+                //if resources are available spawn 
+                SpawnUnit2();
                 //reduce resources
-                playerStats.Money -= plagueCost;
+                playerStats.Money -= unit2Cost;
             }
             else
             {
@@ -79,7 +90,31 @@ public class SummonAttackUnit : MonoBehaviour
         {
             Debug.Log("No camp");
         }
-    } //select plague
+    } //select unit 2
+
+    public void SelectUnit3()
+    {
+        //check if there is an army camp in the board
+        if (CheckForArmyCamp())
+        {
+            //if an army camp is available, check resources
+            if (playerStats.Money >= unit3Cost)
+            {
+                //if resources are available spawn 
+                SpawnUnit3();
+                //reduce resources
+                playerStats.Money -= unit3Cost;
+            }
+            else
+            {
+                Debug.Log("no money");
+            }
+        }
+        else
+        {
+            Debug.Log("No camp");
+        }
+    } //select unit 3
 
     bool CheckForArmyCamp()
     {
@@ -107,16 +142,21 @@ public class SummonAttackUnit : MonoBehaviour
 
     } // check for army camp
 
-    void SpawnDragon()
+    void SpawnUnit1()
     {
-        Instantiate(dragon, transform.position, Quaternion.identity);
+        Instantiate(unit1, transform.position, Quaternion.identity);
         
-    } //spawn dragon
+    } //spawn unit 1
 
-    void SpawnPlague()
+    void SpawnUnit2()
     {
-        Instantiate(plague, transform.position, Quaternion.identity);
-    } //spawn plague
+        Instantiate(unit2, transform.position, Quaternion.identity);
+    } //spawn unit 2
+
+    void SpawnUnit3()
+    {
+        Instantiate(unit3, transform.position, Quaternion.identity);
+    } //spawn unit 3
 
 
 } //class

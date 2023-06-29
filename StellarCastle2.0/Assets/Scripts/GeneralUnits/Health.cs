@@ -30,7 +30,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _value)
     {
-        unitStats.Health -= _value;
+
+        float _evasion = Random.Range(1, 100);
+        if(_evasion >= unitStats.Evasion)
+        {
+            unitStats.Health -= _value;
+        }      
 
     } //take damage
 

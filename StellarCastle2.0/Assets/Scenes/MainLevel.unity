@@ -2561,9 +2561,10 @@ GameObject:
   - component: {fileID: 1273603898}
   - component: {fileID: 1273603897}
   - component: {fileID: 1273603900}
+  - component: {fileID: 1273603901}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2642,6 +2643,7 @@ MonoBehaviour:
   playerBase: {fileID: 869817942}
   baseUnitStats: {fileID: 869817944}
   playerStats: {fileID: 1201683019}
+  roundManager: {fileID: 1273603901}
   timeMinutes: 0
   currencyText: {fileID: 1585614526}
   timeText: {fileID: 1297757216}
@@ -2660,6 +2662,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameWonUI: {fileID: 0}
   nextLevel: 
+--- !u!114 &1273603901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273603894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c17673a5ba678e4298294846a4abe2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalRounds: 5
+  roundDuration: 10
+  preparationTime: 3
 --- !u!1001 &1296192622
 PrefabInstance:
   m_ObjectHideFlags: 0

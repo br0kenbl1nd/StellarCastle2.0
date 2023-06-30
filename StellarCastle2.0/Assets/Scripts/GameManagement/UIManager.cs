@@ -10,19 +10,13 @@ public class UIManager : MonoBehaviour
 
     public PlayerStats playerStats;
 
-    private float timeSeconds;
-    public float timeMinutes;
+    public RoundManager roundManager;
 
     [Header("UI elements")]
     public GameObject currencyText;
     public GameObject timeText;
     public Image healthBar;
 
-    private void Start()
-    {
-        timeSeconds = 0f;
-        timeMinutes = 0f;
-    } //start
 
     private void Update()
     {
@@ -38,25 +32,16 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        //manage the time text
-        CalculateTime();
-
-        timeText.GetComponent<TMPro.TextMeshProUGUI>().text = timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-
-    } //update
-
-    void CalculateTime()
-    {
-        //increase seconds every frame
-        timeSeconds += Time.deltaTime;
-        //when seconds cross 60 increase minute by one
-        if(timeSeconds >= 60f)
+        if (roundManager.PreparationTimeCount >= 1000f)
         {
-            timeMinutes += 1f;
-            //reset seconds
-            timeSeconds = 0f;
+            timeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Round Time:" + roundManager.RoundDurationCount.ToString("00");
         }
 
-    } //calculate time
+        if(roundManager.RoundDurationCount >= 1000f)
+        {
+            timeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Preparation Time:" + roundManager.PreparationTimeCount.ToString("00");
+        }
+
+    } //update
 
 }

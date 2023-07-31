@@ -2314,6 +2314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerChar
       objectReference: {fileID: 0}
+    - target: {fileID: 7391496915005055351, guid: e26b324fd38bdd946b1b8e00ef26ed7f,
+        type: 3}
+      propertyPath: roundCamPos
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e26b324fd38bdd946b1b8e00ef26ed7f, type: 3}
 --- !u!4 &1080024132 stripped
@@ -2644,7 +2649,6 @@ MonoBehaviour:
   baseUnitStats: {fileID: 869817944}
   playerStats: {fileID: 1201683019}
   roundManager: {fileID: 1273603901}
-  timeMinutes: 0
   currencyText: {fileID: 1585614526}
   timeText: {fileID: 1297757216}
   healthBar: {fileID: 0}
@@ -2677,6 +2681,8 @@ MonoBehaviour:
   totalRounds: 5
   roundDuration: 10
   preparationTime: 3
+  isPreparationTime: 0
+  isRoundTime: 0
 --- !u!1001 &1296192622
 PrefabInstance:
   m_ObjectHideFlags: 0

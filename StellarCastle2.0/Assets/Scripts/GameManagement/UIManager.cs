@@ -32,12 +32,12 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        if (roundManager.PreparationTimeCount >= 1000f)
+        if (roundManager.isRoundTime == true)
         {
             timeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Round Time:" + roundManager.RoundDurationCount.ToString("00");
         }
 
-        if(roundManager.RoundDurationCount >= 1000f)
+        if(roundManager.isPreparationTime == true)
         {
             timeText.GetComponent<TMPro.TextMeshProUGUI>().text = "Preparation Time:" + roundManager.PreparationTimeCount.ToString("00");
         }

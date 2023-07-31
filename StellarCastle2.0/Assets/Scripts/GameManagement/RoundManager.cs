@@ -25,11 +25,18 @@ public class RoundManager : MonoBehaviour
         get { return preparationTimeCount; }
     }
 
+    public bool isPreparationTime;
+    public bool isRoundTime;
+
     private void Awake()
     {
         roundDurationCount = roundDuration;
         preparationTimeCount = preparationTime;
         currentRound = 0;
+
+        isPreparationTime = true;
+        isRoundTime = false;
+
     } //awake
 
     private void Update()
@@ -37,23 +44,26 @@ public class RoundManager : MonoBehaviour
         //if preparation time is over start round
         if(preparationTimeCount <= 0f)
         {
-            //start round
             StartRound();
+            preparationTimeCount = preparationTime;
             roundDurationCount = roundDuration;
-            preparationTimeCount = 100000f;
         }
 
-        //if round time is over, start preparation time
         if(roundDurationCount <= 0f)
         {
-            //start preparation time
             StartPreparationTime();
             preparationTimeCount = preparationTime;
-            roundDurationCount = 100000f;
+            roundDurationCount = roundDuration;
         }
 
-        roundDurationCount -= Time.deltaTime;
-        preparationTimeCount -= Time.deltaTime;
+        if(isRoundTime == true)
+        {
+            roundDurationCount -= Time.deltaTime;
+        }
+        if(isPreparationTime == true)
+        {
+            preparationTimeCount -= Time.deltaTime;
+        }
 
     } //update
 
@@ -67,13 +77,21 @@ public class RoundManager : MonoBehaviour
             return;
         }
 
+        //Disable attack and movement and spawning of new units
+        //Disable attack on all units
+        //Disable movement on all units
+        //Disable spawning of units
         Debug.Log("Start Round");
         Debug.Log(currentRound);
+        isRoundTime = true;
+        isPreparationTime = false;
     } //start round
 
     void StartPreparationTime()
     {
         Debug.Log("Prepare for next Round!");
+        isPreparationTime = true;
+        isRoundTime = false;
     } //start preparation time
 
 
